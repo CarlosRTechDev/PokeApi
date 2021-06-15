@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ 	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="data:image/jpeg;base64,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">
+
+    <title>PokeAPI</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/bootstrap/css/helpStyle.css}" rel="stylesheet">
+
+	<!-- Font Awesome 4 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Font Awesome 5 -->
+<!--     <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+
+</head>
+
+<body>
+
+    <header th:insert="fragments/menu :: menu-principal"></header>
+
+    <div class="container" style="padding-top:70px">
+    	<div class="row">
+    		<div class="col-md-2 col-xs-4">
+    			<img src="https://www.crushpixel.com/big-static16/preview4/game-developer-black-glyph-icon-2238265.jpg" alt="Profile Image">
+    		</div>
+    	
+    		<div class="col-md-10 col-xs-8" style="padding-top:30px">
+          		<h3>Ing. Alberto Carlos Martínez Rosales</h3>
+        		<h4>
+        			<a href="mailto:crosales018@gmail.com"><i class="fa fa-envelope"></i> crosales018@gmail.com</a>
+        		</h4> 
+			</div>
+     	</div>
+    </div>
+
+	<div>
+    	<hr>
+        <h2 class="font-weight-bold text-center text-capitalize">RESTful WS POKEMON</h2>
+        <hr>
+	</div>
+
+    <div class="container">
+    	<div class="row"> 
+      		<div class="col-md-12">
+      		
+        		<table class="table table-hover">
+		  			<thead class="thead-dark">
+				    	<tr>
+				      		<th scope="col">#</th>
+				      		<th scope="col">Ejercicio</th>
+				      		<th scope="col">API/BD</th>
+				      		<th scope="col">Servicios</th>
+				      		<th scope="col">URL</th>
+				      		<th scope="col">Nota</th>
+				    	</tr>
+				  	</thead>
+		  			<tbody>
+		  				<tr>
+		      				<th scope="row">1</th>
+		      				<td>A</td>
+		      				<td>API</td>
+		      				<td>Lista 721 Pokemon</td>
+		      				<td>
+		      					<p><a href="http://localhost:8080/poke-cliente/pokemon">http://localhost:8080/poke-cliente/pokemon</a></p>
+		      				</td>
+		      				<td>*S/N</td>
+		  				</tr>
+					  	<tr>
+					      	<th scope="row">2</th>
+					      	<td>B</td>
+					      	<td>API</td>
+					      	<td>Rango</td>
+					      	<td>
+					      		<p><a href="#">:(</a></p>
+					      	</td>
+					      	<td>*Sin URL</td>
+					  	</tr>
+					  	<tr>
+					      	<th scope="row">3</th>
+					      	<td>C</td>
+					      	<td>API</td>
+					      	<td>Buscar por nombre/número</td>
+					      	<td>
+					      		<p><a href="http://localhost:8080/poke-cliente/pokemon/mewtwo">http://localhost:8080/poke-cliente/pokemon/mewtwo</a></p>
+					      	</td>
+					      	<td>*Al final de la URL cambiar el nombre o número del pokemon{mewtwo} por otro</td>
+					  	</tr>
+					   	<tr>
+					      	<th scope="row">4</th>
+					      	<td>D</td>
+					      	<td>BD</td>
+					      	<td>Guardar Pokemon</td>
+					      	<td>
+					      		<p><a href="#"> localhost:8080/pokemon-db/pokemon/</a></p>
+					      	</td>
+					      	<td>*En POSTMAN configurar la petición a Post y agregar esta URL. En Body agregar: nombre, apodo, especie, tipos, numeroPoke. (HP, ATK, DEF son aleatorios).</td>
+					  	</tr>
+					  	<tr>
+					      	<th scope="row">5</th>
+					      	<td>E</td>
+					      	<td>BD</td>
+					      	<td>Buscar por apodo</td>
+					      	<td>
+					      		<p><a href="http://localhost:8080/pokemon-db/pokemon/apodo/Charlyzard">http://localhost:8080/pokemon-db/pokemon/apodo/Charlyzard</a></p>
+					      	</td>
+					      	<td>*Al final de la URL cambiar el apodo{Charlyzard} por alguno de la BD</td>
+					  	</tr>
+					  	<tr>
+					      	<th scope="row">6</th>
+					      	<td>F</td>
+					      	<td>BD</td>
+					      	<td>Buscar por especie</td>
+					      	<td>
+					      		<p><a href="http://localhost:8080/pokemon-db/pokemon/especie/Llama">http://localhost:8080/pokemon-db/pokemon/especie/Llama</a></p>
+					      	</td>
+					      	<td>*Al final de la URL cambiar la especie{Llama} por uno de la BD</td>
+					  	</tr>
+					  	<tr>
+					      	<th scope="row">7</th>
+					      	<td>--</td>
+					      	<td>BD</td>
+					      	<td>Mostrar todos los Pokemon de la BD</td>
+					      	<td>
+					      		<p><a href="http://localhost:8080/pokemon-db/pokemon">http://localhost:8080/pokemon-db/pokemon</a></p>
+					      	</td>
+					      	<td>*Muestra a todos los Pokemon de la BD, para consultar apodos, especies del Pokemon.</td>
+					  	</tr>
+					  	<tr>
+					      	<th scope="row">8</th>
+					      	<td>--</td>
+					      	<td>--</td>
+					      	<td>Consola H2</td>
+					      	<td>
+					      		<p><a href="http://localhost:8080/h2-console">http://localhost:8080/h2-console</a></p>
+					      	</td>
+					      	<td>Acceso base de datos H2<br> JDBC URL: jdbc:h2:mem:testdb<br> user: sa<br> password: sa</td>
+					  	</tr>
+		  			</tbody>
+				</table>
+			</div>
+      	</div>
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

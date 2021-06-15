@@ -1,0 +1,11 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 1rem;
+/*   height:100%; */
+/*   width: 100%; */
+}
+img{
+	display: inline-block;
+	width: 140px;
+	border-radius: 50%;
+}
